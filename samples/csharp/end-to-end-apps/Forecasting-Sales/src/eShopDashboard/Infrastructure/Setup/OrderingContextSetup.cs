@@ -36,7 +36,7 @@ namespace eShopDashboard.Infrastructure.Setup
             _dbContext = dbContext;
             _logger = logger;
             _setupPath = Path.Combine(env.ContentRootPath, "Infrastructure", "Setup", "DataFiles");
-            _connectionString = configuration.GetConnectionString("DefaultConnection");
+            _connectionString = configuration.GetConnectionString(AppConsts.DefaultConnectionStringName);
         }
 
         public async Task<SeedingStatus> GetSeedingStatusAsync()

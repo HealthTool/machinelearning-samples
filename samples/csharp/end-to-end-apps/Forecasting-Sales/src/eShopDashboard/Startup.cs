@@ -30,13 +30,13 @@ namespace eShopDashboard
         {
             services.AddDbContext<CatalogContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection"),
+                    Configuration.GetConnectionString(AppConsts.DefaultConnectionStringName),
                     opts => opts.CommandTimeout((int)TimeSpan.FromMinutes(20).TotalSeconds)
                                     ));
 
             services.AddDbContext<OrderingContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection"),
+                    Configuration.GetConnectionString(AppConsts.DefaultConnectionStringName),
                     opts => opts.CommandTimeout((int)TimeSpan.FromMinutes(20).TotalSeconds)
                                     ));
 
